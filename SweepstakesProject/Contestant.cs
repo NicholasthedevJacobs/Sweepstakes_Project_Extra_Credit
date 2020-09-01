@@ -13,6 +13,7 @@ namespace SweepstakesProject
         public string lastName;
         public string emailAddress;
         public int registrationNumber;
+        public bool winner;
         
 
         //constructor
@@ -21,6 +22,7 @@ namespace SweepstakesProject
             firstName = UserInterface.GetFirstName();
             lastName = UserInterface.GetLastName();
             emailAddress = UserInterface.GetEmail();
+            winner = false;
             
             registrationNumber = 0;
         }
@@ -28,8 +30,13 @@ namespace SweepstakesProject
         //member methods
         public void Update(Contestant winner)
         {
+            
             Console.WriteLine($"Congratulations to {winner.firstName} {winner.lastName} for winning the sweepstakes!  Sorry to everyone else who participated.  Better luck next time.");
             
+        }
+        public void UpdateTheWinner(Contestant winner)
+        {
+            Console.WriteLine("Contratulations, you have won the sweepstakes!");
         }
 
 

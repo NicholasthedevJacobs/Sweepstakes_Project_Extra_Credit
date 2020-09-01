@@ -10,7 +10,7 @@ namespace SweepstakesProject
     {
         //member variables
         private string name;
-        private Dictionary<int, IObserver> contestants;
+        private Dictionary<int, Contestant> contestants;
         //private List<Contestant> contestants1;
 
         public string Name
@@ -28,7 +28,7 @@ namespace SweepstakesProject
         //constructor
         public Sweepstakes(string name)
         {
-            contestants = new Dictionary<int, IObserver>();
+            contestants = new Dictionary<int, Contestant>();
             this.name = name;
         }
 
@@ -39,11 +39,12 @@ namespace SweepstakesProject
             contestants.Add(contestants.Count + 1, contestant);
            
         }
-        public IObserver PickWinner()
+        public Contestant PickWinner()
         {          
             Random random = new Random();
             int winnerToPick = random.Next(contestants.Count);
-            IObserver winner = contestants[winnerToPick];
+            Contestant winner = contestants[winnerToPick];
+            winner.winner = true;
             return winner;
         }
         public void PrintContestantInfo(Contestant contestant)
@@ -54,15 +55,16 @@ namespace SweepstakesProject
         //{
         //    contestants.Add(observer);
         //}
-        public void NotifyObserver(IObserver observer)
+        public void NotifyObserver(Contestant winner)
         {
-            foreach(KeyValuePair<int, IObserver> contestant in contestants)
+            foreach(KeyValuePair<int, Contestant> contestant in contestants)
             {
-                observer.Update(contestants);
-            }
-            
-        }
-       
-
+                if (contestant.Value.winner == true)
+                {
+                    contestant.Value.UpdateTheWinner(winner);
+                }
+                contestant.Value.Update(winner);
+            }            
+        }       
     }
 }

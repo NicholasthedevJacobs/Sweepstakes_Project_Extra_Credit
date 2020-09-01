@@ -9,7 +9,7 @@ namespace SweepstakesProject
     public interface ISubject
     {
       
-        void NotifyObserver(IObserver observer);
+        void NotifyObserver(Contestant contestant);
 
     }
 
