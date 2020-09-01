@@ -1,0 +1,9 @@
+The use of dependency injection allows this application to make ties between classes 
+and objects that could not have been cleanly achieved without.  By creating the 
+ISweepStakesManager interface, it created structure by which the SweepstakesQueueManager
+and SweepstakesStackManager must abide.  These classes inherited the interface in 
+order for the MarketingFirm class to be able to pass in the ISweepStakesManager 
+data type into its parameter, effectively allowing it to use both the Queue and 
+Stack manager classes.  This gave the MarketingFirm access to both the queue and 
+stack objects, allowing the class to have functionality to not only create sweepstakes, 
+but to also assign the method by which they are stored and accessed.
