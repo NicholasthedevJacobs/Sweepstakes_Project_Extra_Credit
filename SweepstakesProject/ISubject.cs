@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    interface Subject
+    public interface ISubject
     {
+      
+        void NotifyObserver(IObserver observer);
+
     }
+
+
 }

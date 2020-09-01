@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    class Contestant 
+    public class Contestant : IObserver
     {
         //member variables
         public string firstName;
         public string lastName;
         public string emailAddress;
         public int registrationNumber;
+        
 
         //constructor
         public Contestant()
@@ -25,6 +26,11 @@ namespace SweepstakesProject
         }
 
         //member methods
+        public void Update(Contestant winner)
+        {
+            Console.WriteLine($"Congratulations to {winner.firstName} {winner.lastName} for winning the sweepstakes!  Sorry to everyone else who participated.  Better luck next time.");
+            
+        }
 
 
     }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    interface Interface1
+    public interface IObserver
     {
+        void Update(Contestant contestant);
     }
 }

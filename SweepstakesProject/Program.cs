@@ -19,7 +19,7 @@ namespace SweepstakesProject
 
 
             //Simulation sim = new Simulation();
-            //SimulationFactory factory = new SimulationFactory();
+            //SweepstakesManagerFactory factory = new SweepstakesManagerFactory();
             //string type = sim.GetSweepstakesType();
             //ISweepStakesManager manager = factory.CreateSweepstakes(type);
             //MarketingFirm mf = new MarketingFirm(manager);
