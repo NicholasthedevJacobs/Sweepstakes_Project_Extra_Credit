@@ -11,7 +11,7 @@ namespace SweepstakesProject
         //member variables
         private string name;
         private Dictionary<int, Contestant> contestants;
-        //private List<Contestant> contestants1;
+
 
         public string Name
         {
@@ -51,10 +51,7 @@ namespace SweepstakesProject
         {
             Console.WriteLine($"First Name: {contestant.firstName}, Last Name: {contestant.lastName}, Email: {contestant.emailAddress}");                                   
         }
-        //public void Register(IObserver observer)
-        //{
-        //    contestants.Add(observer);
-        //}
+
         public void NotifyObserver(Contestant winner)
         {
             foreach(KeyValuePair<int, Contestant> contestant in contestants)
